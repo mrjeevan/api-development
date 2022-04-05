@@ -2,12 +2,14 @@ const express = require('express')
 const req = require('express/lib/request')
 const router = express.Router()
 
+const verify = require('../security/verifyToken')
+
 const Complaint = require('../models/Complaint')
 
 const {ComplaintValidation} = require('../security/validation')
 
 
-router.get('/:StudentId', async (req,res)=>{
+router.get('/:StudentId',verify, async (req,res)=>{
 
     try
     {
@@ -20,7 +22,7 @@ router.get('/:StudentId', async (req,res)=>{
     }
 })
 
-router.post('/:StudentId', async (req,res)=>{
+router.post('/:StudentId',verify, async (req,res)=>{
 
     const {error} = ComplaintValidation(req.body);
     if (error) return res.status(400).send(error.details[0].message);
@@ -42,7 +44,7 @@ router.post('/:StudentId', async (req,res)=>{
     }
 })
 
-router.delete('/:StudentId', async (req,res)=>{
+router.delete('/:StudentId',verify, async (req,res)=>{
     try{
         const complaint = await Complaint.findOneAndDelete({"_id":req.body.complaint_id,"student":req.params.StudentId})
         res.json(complaint)
@@ -53,7 +55,7 @@ router.delete('/:StudentId', async (req,res)=>{
     }
 })
 
-router.patch('/:StudentId',async(req,res)=>{
+router.patch('/:StudentId',verify,async(req,res)=>{
 
 
     try{

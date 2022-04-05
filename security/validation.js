@@ -32,8 +32,17 @@ const ComplaintValidation = (data) =>{
     return ComplaintSchema.validate(data)
 }
 
+const loginValidation = (data) =>{
+    const loginSchema = joy.object({
+        email: joy.string().required().email(),
+        password: joy.string().min(6).required(),
+    })
 
+    return loginSchema.validate(data);
+
+}
 
 module.exports.StudentRegistrationValidation = StudentRegistrationValidation
 module.exports.StaffRegistrationValidation = StaffRegistrationValidation
 module.exports.ComplaintValidation = ComplaintValidation
+module.exports.loginValidation = loginValidation

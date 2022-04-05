@@ -2,10 +2,13 @@ const express = require('express')
 const { route } = require('./students')
 const router = express.Router()
 
+const verify = require('../security/verifyToken')
+
+
 const Complaint = require('../models/Complaint')
 const Staff = require('../models/Staff')
 
-router.get('/complaints',async (req,res)=>{
+router.get('/complaints',verify,async (req,res)=>{
     try{
         const all_complaints = await Complaint.find();
         res.json(all_complaints);
@@ -16,7 +19,7 @@ router.get('/complaints',async (req,res)=>{
     }
 })
 
-router.post('/complaints',async (req,res)=>{
+router.post('/complaints',verify,async (req,res)=>{
     
         try{
         const staff = await Staff.findById(req.body.staff);
@@ -32,6 +35,10 @@ router.post('/complaints',async (req,res)=>{
             }
 
         }
+        else
+        {
+            res.status(400).json({error:"non existing staff"});
+        }
         
     }
     catch(err){
@@ -40,7 +47,7 @@ router.post('/complaints',async (req,res)=>{
     
 })
 
-router.get('/staff',async(req,res)=>{ 
+router.get('/staff',verify,async(req,res)=>{ 
 
     try{
         const all_staff = await Staff.find();

@@ -10,19 +10,23 @@ mongoose.connect(process.env.DB_CONNECTION,()=>{console.log('connected');});
 app.use(bodyparser.json())
 
 //Register(Student,Staff,Admin)
-const register = require('./security/auth')
+const register = require('./security/register')
 app.use('/api/register',register)
+
+//login
+const login = require("./security/login")
+app.use('/api/login',login)
 
 //Student
 const studentHome = require('./routes/students')
 app.use('/api/sutdent',studentHome)
 
 //Admin
-const adminHome = require('./routes/admin');
+const adminHome = require('./routes/admin')
 app.use('/api/admin',adminHome)
 
 //Staff
-const staffHome = require('./routes/staff');
+const staffHome = require('./routes/staff')
 app.use('/api/staff',staffHome)
 
 app.listen(3000)

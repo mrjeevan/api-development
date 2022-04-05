@@ -1,9 +1,11 @@
 const express = require('express')
 const route = express.Router()
 
+const verify = require('../security/verifyToken')
+
 const Complaint = require('../models/Complaint')
 
-route.get('/:staffId',async(req,res)=>{
+route.get('/:staffId',verify,async(req,res)=>{
     try{
         const all_assigned_complaints = await Complaint.find({staffAssigned:req.params.staffId});
         res.json(all_assigned_complaints);
@@ -13,7 +15,7 @@ route.get('/:staffId',async(req,res)=>{
     }
 })
 
-route.post('/:staffId',async(req,res)=>{
+route.post('/:staffId',verify,async(req,res)=>{
     try{
         const complaint = await Complaint.findOneAndUpdate({"staffAssigned":req.params.staffId,"_id":req.body.complaint},{"solved":true});
         res.json(complaint);
