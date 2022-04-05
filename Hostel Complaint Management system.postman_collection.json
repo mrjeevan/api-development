@@ -1,0 +1,538 @@
+{
+	"info": {
+		"_postman_id": "8ace3ca2-2376-469a-a92c-19a7d19dd1ca",
+		"name": "Hostel Complaint Management system",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Student",
+			"item": [
+				{
+					"name": "Post Compllaint",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjRjNWE4Y2EyMWY5NDA1NDcyYzZjMDYiLCJpYXQiOjE2NDkxNzczOTd9.MtojnrvD22p2dOhl9Fpq77zNLYvcfg-AIrxMufC0Aec",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"block\":\"kumaradhara A block\",\r\n    \"room_no\":\"13\",\r\n    \"complaint\":\"this is serious problem\",\r\n    \"description\":\"description of serious problem\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/sutdent/624c5a8ca21f9405472c6c06",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"sutdent",
+								"624c5a8ca21f9405472c6c06"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update a Compllaint",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjRjNWE4Y2EyMWY5NDA1NDcyYzZjMDYiLCJpYXQiOjE2NDkxNzczOTd9.MtojnrvD22p2dOhl9Fpq77zNLYvcfg-AIrxMufC0Aec",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"complaint_id\": \"624c73ad52b6f0c559e9b11c\",\r\n        \"block\": \"kumaradhara o block\",\r\n        \"room_no\": \"142\",\r\n        \"complaint\": \"this is now test problem\",\r\n        \"description\": \"description of new test problem\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/sutdent/624c5a8ca21f9405472c6c06",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"sutdent",
+								"624c5a8ca21f9405472c6c06"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Compllaint",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjRjNWE4Y2EyMWY5NDA1NDcyYzZjMDYiLCJpYXQiOjE2NDkxNzczOTd9.MtojnrvD22p2dOhl9Fpq77zNLYvcfg-AIrxMufC0Aec",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"complaint_id\":\"6249a96e42b223870763a58c\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/sutdent/624c5a8ca21f9405472c6c06",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"sutdent",
+								"624c5a8ca21f9405472c6c06"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get your complaints",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjRjNWE4Y2EyMWY5NDA1NDcyYzZjMDYiLCJpYXQiOjE2NDkxNzczOTd9.MtojnrvD22p2dOhl9Fpq77zNLYvcfg-AIrxMufC0Aec",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/sutdent/624c5a8ca21f9405472c6c06",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"sutdent",
+								"624c5a8ca21f9405472c6c06"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "view all complaints",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjRjNWI3MTQ3YTI4NWFmOTkxNjkwYzMiLCJpYXQiOjE2NDkxNzc5MDd9.ESS6PjFcJt5wgchPAp2l5uJ4ei91_8QlFharZhI2e_c",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/admin/complaints",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"admin",
+								"complaints"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Assign complaint to staff",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjRjNWI3MTQ3YTI4NWFmOTkxNjkwYzMiLCJpYXQiOjE2NDkxNzc5MDd9.ESS6PjFcJt5wgchPAp2l5uJ4ei91_8QlFharZhI2e_c",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"complaint\":\"624c73ad52b6f0c559e9b11c\",\r\n    \"staff\":\"624c5b2a47a285af991690bf\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/admin/complaints",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"admin",
+								"complaints"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "view all Staff",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjRjNWI3MTQ3YTI4NWFmOTkxNjkwYzMiLCJpYXQiOjE2NDkxNzc5MDd9.ESS6PjFcJt5wgchPAp2l5uJ4ei91_8QlFharZhI2e_c",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/admin/staff",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"admin",
+								"staff"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Register",
+			"item": [
+				{
+					"name": "Register student",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \"name\":\"jeevan\",\r\n        \"email\":\"jeevan@email.com\",\r\n        \"password\":\"passworddontshare\",\r\n        \"usn\":\"4al18cs046\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/register/student",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"register",
+								"student"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register staff",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"secureStaff\",\r\n            \"email\":\"secureStaff@gmail.com\",\r\n            \"password\":\"password\",\r\n            \"staffId\":\"4al18stf04\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/register/staff",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"register",
+								"staff"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"SecureManager\",\r\n            \"email\":\"SecureManager@gmail.com\",\r\n            \"password\":\"password\",\r\n            \"staffId\":\"4al18stf22\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/register/admin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"register",
+								"admin"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"item": [
+				{
+					"name": "Student login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"jeevan@email.com\",\r\n        \"password\":\"passworddontshare\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/login/student",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"login",
+								"student"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Staff login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \"email\":\"secureStaff@gmail.com\",\r\n            \"password\":\"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/login/staff",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"login",
+								"staff"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Admin login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \"email\":\"SecureManager@gmail.com\",\r\n            \"password\":\"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/login/admin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"login",
+								"admin"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Staff",
+			"item": [
+				{
+					"name": "View assigned complaints",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjRjNWIyYTQ3YTI4NWFmOTkxNjkwYmYiLCJpYXQiOjE2NDkxNzg1NDJ9.L0UblsNowG3YtROI3CkcJBLpqzGVGEhpmEpjJWbtRdM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/staff/624c5b2a47a285af991690bf",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"staff",
+								"624c5b2a47a285af991690bf"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Solve a complaint",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjRjNWIyYTQ3YTI4NWFmOTkxNjkwYmYiLCJpYXQiOjE2NDkxNzg1NDJ9.L0UblsNowG3YtROI3CkcJBLpqzGVGEhpmEpjJWbtRdM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"complaint\":\"624c73ad52b6f0c559e9b11c\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/staff/624c5b2a47a285af991690bf",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"staff",
+								"624c5b2a47a285af991690bf"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
